@@ -8,7 +8,6 @@ var makeQueue = function(){
     storage[size] = value;
     someInstance[value] = value;
     size++;
-    return value;
   };
 
   someInstance.dequeue = function(){

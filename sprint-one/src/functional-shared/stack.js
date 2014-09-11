@@ -25,10 +25,7 @@ stackMethods.pop = function () {
 };
 
 stackMethods.push = function (value) {
-	console.log(this.count, value);
-	this[this.count] = value;
-	this.count++;
-	return value;
+	this[this.count++] = value;
 };
 
 stackMethods.size = function () {

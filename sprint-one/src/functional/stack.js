@@ -10,7 +10,6 @@ var makeStack = function(){
   	storage[size] = value;
   	someInstance[value] = value;
   	size++;
-  	return size;
   };
 
   someInstance.pop = function(){

@@ -16,7 +16,6 @@ queueMethods.enqueue = function (value) {
 
 	this[this.count] = value;
 	this.count++;
-	return this.count;
 };
 
 queueMethods.dequeue = function () {
