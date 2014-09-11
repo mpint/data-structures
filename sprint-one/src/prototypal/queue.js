@@ -24,7 +24,7 @@ queueMethods.dequeue = function () {
 		return temp;
 	}
 
-	return undefined;
+	return;
 };
 queueMethods.size = function () {
 	return this.count;
