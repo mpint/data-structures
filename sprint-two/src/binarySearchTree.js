@@ -56,7 +56,7 @@ binaryTreeMethods.depthFirstLog= function(callback){
     }
     }
   };
-  debugger;
+
   //callback(this)
   traverse(this);
 };

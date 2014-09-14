@@ -21,7 +21,7 @@ var makeLinkedList = function(){
 
 
   list.removeHead = function(){
-    debugger;
+
     var eval = this.head;
     delete this[this.head.value];
     this.head = eval.next;
