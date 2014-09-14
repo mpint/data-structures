@@ -32,7 +32,6 @@ HashTable.prototype.retrieve = function(k){
   if(result !== undefined && result.length > 1){
 
     var eval = this._storage.get(i);
-    debugger;
     for(var p = 0;p<eval.length;p++){
       if(eval[p][1] === k){
         answer =eval[p][1];
