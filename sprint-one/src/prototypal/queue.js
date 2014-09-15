@@ -26,6 +26,7 @@ queueMethods.dequeue = function () {
 
 	return;
 };
+
 queueMethods.size = function () {
 	return this.count;
 };

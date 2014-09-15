@@ -1,18 +1,18 @@
-var makeTree = function(value){
+var makeTree = function(value){  // functional shared instantiation pattern
+
   var newTree = {};
   newTree.value = value;
   newTree.children = [];
   extend(newTree,treeMethods);
-  return newTree;
+  
+  return newTree; // returns newTree Object with its extended helper treeMethods
 };
-
 
 var extend = function(to,from){
 	for(var key in from){
 		to[key] = from[key];
 	}
 }
-
 
 var treeMethods = {};
 
@@ -24,18 +24,19 @@ treeMethods.addChild = function(value){
 treeMethods.contains = function(target){
   var test = false;
 
-  var traverse = function (node) {
-    if(target === node.value){
-      test = true;
-    }
-    if(node.children.length > 0){
+  var traverse = function (node) { // closure for traversal to store tes
 
-      for(var i =0;i<node.children.length;i++){
-        var curChild = node.children[i];
-        traverse(curChild);
+    test = target === node.value ? !test : test; // contains truth test
+
+    if (node.children.length > 0) {
+
+      for (var i = 0; i < node.children.length; i++) {
+        var child = node.children[i];
+        traverse(child);
       }
     }
   }
+
   traverse(this);
   return test;
 };
@@ -43,4 +44,5 @@ treeMethods.contains = function(target){
 
 /*
  * Complexity: What is the time complexity of the above functions?
+    --> 
  */

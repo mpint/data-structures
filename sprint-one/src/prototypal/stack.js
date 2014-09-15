@@ -3,12 +3,10 @@ var makeStack = function() {
   // but try not not reference your old code in writing the new style.
   // link makeStack to its methods using Object.create(makeStack)
 	
-
   var stack = Object.create(stackMethods);
   stack.count = 0;
   stack.storage = {};
   return stack;
-
 
 };
 
@@ -25,7 +23,6 @@ stackMethods.pop = function () {
 	delete this.storage[this.count];
 	return temp;
 };
-
 
 stackMethods.size = function () {
 	return this.count;

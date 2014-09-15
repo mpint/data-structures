@@ -52,4 +52,13 @@ describe('linkedList', function() {
   });
 
   // add more tests here to test the functionality of linkedList
+
+  it('should be doubly linked', function(){
+    linkedList.addToTail(1);
+    linkedList.addToTail(2);
+    debugger;
+    linkedList.addToTail(3);
+    expect(linkedList[1].next).to.equal(1);
+    expect(linkedList[1].previous).to.equal(3);
+  });
 });

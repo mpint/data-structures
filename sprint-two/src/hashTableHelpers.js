@@ -10,11 +10,11 @@
 //   limitedArray.set(3, 'hi');
 //   limitedArray.get(3); // returns 'hi'
 
-var makeLimitedArray = function(limit){
-  var storage = [];
+var makeLimitedArray = function(limit){ // functional instantiation pattern
+  var storage = []; // private storage Array only accessible by limitedArray.methods
 
   var limitedArray = {};
-  limitedArray.get = function(index){
+  limitedArray.get = function(index){ // gets a bucket in the hash table
     checkLimit(index);
     return storage[index];
   };
@@ -46,9 +46,11 @@ var getIndexBelowMaxForKey = function(str, max){
     hash = hash & hash; // Convert to 32bit integer
     hash = Math.abs(hash);
   }
+
   return hash % max;
 };
 
 /*
  * Complexity: What is the time complexity of the above functions?
+    --> O(1) for setter/getter and O(n) for each
  */
